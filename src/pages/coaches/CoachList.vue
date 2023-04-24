@@ -1,23 +1,26 @@
 <template>
   <div>
     <h1>CoachList</h1>
-    <section>
-      <div class="controls">
-        <button>Refresh</button>
-        <router-link to="/register">Register as coach</router-link>
-      </div>
-      <ul v-if="hasCoach">
-        <CoachInfo 
-          v-for="coach in filteredCoachesList" 
-          :key="coach.id"
-          :id="coach.id"
-          :firstName="coach.firstName"
-          :lastName="coach.lastName"
-          :areas="coach.areas"
-          :rate="coach.rate"></CoachInfo>
-      </ul>
-      <h3 v-else>No coaches found.</h3>
-    </section>
+    <BaseCard>
+      <section>
+        <div class="controls">
+          <Basebutton mode="outline">Refresh</Basebutton>
+          <Basebutton isLink to="/register">Register as coach</Basebutton>
+        </div>
+        <ul v-if="hasCoach">
+          <CoachInfo
+            v-for="coach in filteredCoachesList"
+            :key="coach.id"
+            :id="coach.id"
+            :firstName="coach.firstName"
+            :lastName="coach.lastName"
+            :areas="coach.areas"
+            :rate="coach.rate"
+          ></CoachInfo>
+        </ul>
+        <h3 v-else>No coaches found.</h3>
+      </section>
+    </BaseCard>
   </div>
 </template>
 
@@ -25,19 +28,19 @@
 import CoachInfo from '../../components/coaches/CoachInfo.vue';
 
 export default {
-  computed:{
+  computed: {
     filteredCoachesList() {
       // ['namespaced/propertyName']
-      return this.$store.getters['coaches/coachesList']
+      return this.$store.getters['coaches/coachesList'];
     },
     hasCoach() {
-      return this.$store.getters['coaches/hasCoach']
+      return this.$store.getters['coaches/hasCoach'];
     }
   },
   components: {
     CoachInfo
   }
-}
+};
 </script>
 
 <style scoped>

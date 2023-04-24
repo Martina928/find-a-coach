@@ -3,11 +3,12 @@
     <h3>{{ fullName }}</h3>
     <h4>{{ rate }}</h4>
     <div>
-      <span v-for="area in areas" :key="area">{{ area }}</span>
+      <BaseBadge v-for="area in areas" :key="area" :type="area" :text="area"></BaseBadge>
     </div>
     <div class="actions">
-      <router-link :to="coachContactPath">Contact</router-link>
-      <router-link :to="coachDetailPath">View Detail</router-link>
+      <!-- 隱式 prop 綁定 -->
+      <Basebutton isLink :to="coachContactPath">Contact</Basebutton>
+      <Basebutton isLink :to="coachDetailPath">View Detail</Basebutton>
     </div>
   </li>
 </template>
