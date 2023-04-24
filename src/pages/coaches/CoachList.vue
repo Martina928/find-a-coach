@@ -4,8 +4,8 @@
     <BaseCard>
       <section>
         <div class="controls">
-          <Basebutton mode="outline">Refresh</Basebutton>
-          <Basebutton isLink to="/register">Register as coach</Basebutton>
+          <BaseButton mode="outline">Refresh</BaseButton>
+          <BaseButton isLink to="/register">Register as coach</BaseButton>
         </div>
         <ul v-if="hasCoach">
           <CoachInfo

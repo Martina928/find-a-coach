@@ -7,8 +7,8 @@
     </div>
     <div class="actions">
       <!-- 隱式 prop 綁定 -->
-      <Basebutton isLink :to="coachContactPath">Contact</Basebutton>
-      <Basebutton isLink :to="coachDetailPath">View Detail</Basebutton>
+      <BaseButton isLink :to="coachContactPath">Contact</BaseButton>
+      <BaseButton isLink :to="coachDetailPath">View Detail</BaseButton>
     </div>
   </li>
 </template>
