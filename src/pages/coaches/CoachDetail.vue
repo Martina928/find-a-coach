@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     fullName() {
-      return `${this.selectedCoach.firstNama} ${this.selectedCoach.lastName}`;
+      return `${this.selectedCoach.firstName} ${this.selectedCoach.lastName}`;
     },
     contactLink() {
       return `${this.$route.path}/contact`;

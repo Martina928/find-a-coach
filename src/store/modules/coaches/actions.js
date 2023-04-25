@@ -2,7 +2,7 @@ export default {
   registerCoach(context, data) {
     // 轉換資料格式
     const newCoach = {
-      id: 'c3',
+      id: context.rootGetters.userId,
       firstName: data.first,
       lastName: data.last,
       description: data.des,
