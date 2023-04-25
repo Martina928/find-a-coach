@@ -38,6 +38,7 @@
 
 <script>
 export default {
+  emits: ['saveCoach'],
   data() {
     return {
       firstName: '',
@@ -50,14 +51,16 @@ export default {
   methods: {
     submitForm() {
       const newCoach = {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        description: this.description,
+        first: this.firstName,
+        last: this.lastName,
+        des: this.description,
         rate: this.rate,
         areas: this.areas
       }
 
-      console.log(newCoach)
+      console.log(newCoach);
+      // 將 data 傳給父層，從父層更改 store 中的狀態
+      this.$emit('saveCoach', newCoach);
     }
   }
 }
